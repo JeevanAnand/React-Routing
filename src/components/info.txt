@@ -1,0 +1,12 @@
+Unlike Frame Works Like Angular,React doesnt have the concept of routing 
+
+React is a simple lightweight library and not a complete framework
+
+React is only responsible for rendering the view
+
+Command to install React Router DOM
+npm i react-router-dom@4.3.1
+
+Above library is the implimentation of react router for DOM or Browser
+
+Similarly we have rect-router-native,it is used for mobile applications 
