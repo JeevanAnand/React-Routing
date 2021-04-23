@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch,Redirect } from 'react-router-dom';
 import Products from "./components/products";
 import Posts from "./components/posts";
 import Home from "./components/home";
@@ -27,7 +27,10 @@ class App extends Component {
             <Route path="/products" render={(props) => <Products sort="newest"{...props} />} />   {/* In this case we are including both default and component specific props  */}
             <Route path="/posts/:year?/:month?" component={Posts} />    {/* ? Says the parameter are optional,this is a part of regular expression in JS */}
             <Route path="/admin" component={Dashboard} />
+            <Redirect from="/messages" to="/posts"/>   //Redirect from one url to another
+            <Route path="/not-found" component={NotFound}/>
             <Route path="/" exact component={Home} />
+            <Redirect to="/not-found"/> //Page Redirecting  
           </Switch>
 
         </div>
@@ -37,3 +40,5 @@ class App extends Component {
 }
 
 export default App;
+
+//npm i query-string@6.1.0
