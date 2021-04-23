@@ -25,7 +25,7 @@ class App extends Component {
             {/* <Route path="/products" render={()=><Products sort="newest"/>}/> In this case we are overwriting default props  */}
             <Route path="/products/:id" component={ProductDetails} />
             <Route path="/products" render={(props) => <Products sort="newest"{...props} />} />   {/* In this case we are including both default and component specific props  */}
-            <Route path="/posts" component={Posts} />
+            <Route path="/posts/:year?/:month?" component={Posts} />    {/* ? Says the parameter are optional,this is a part of regular expression in JS */}
             <Route path="/admin" component={Dashboard} />
             <Route path="/" exact component={Home} />
           </Switch>
